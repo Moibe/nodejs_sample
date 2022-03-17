@@ -1,0 +1,19 @@
+# Opalstack Node.js README
+
+## Controlling your app
+
+Start your app by running:
+
+   /home/moibe/apps/nodejs_sample/start
+
+Stop your app by running:
+
+   /home/moibe/apps/nodejs_sample/stop
+
+## Installing modules
+
+If you want to install Node modules in your app directory:
+
+cd /home/moibe/apps/nodejs_sample
+npm install modulename
+

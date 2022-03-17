@@ -1,0 +1,15 @@
+#!/bin/bash
+export TMPDIR=/home/moibe/apps/nodejs_sample/tmp
+mkdir -p /home/moibe/apps/nodejs_sample/tmp
+PIDFILE="/home/moibe/apps/nodejs_sample/tmp/node.pid"
+NODE=/home/moibe/apps/nodejs_sample/node/bin/node
+
+if [ -e "$PIDFILE" ] && (pgrep -u moibe | grep -x -f $PIDFILE &> /dev/null); then
+  echo "Node.js for nodejs_sample already running."
+  exit 99
+fi
+
+cd /home/moibe/apps/nodejs_sample
+/usr/sbin/daemonize -c /home/moibe/apps/nodejs_sample -e ~/logs/apps/nodejs_sample/node_error.log -o ~/logs/apps/nodejs_sample/node_output.log -p $PIDFILE $NODE app.js
+
+echo "Started Node.js for nodejs_sample."

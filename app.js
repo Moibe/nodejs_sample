@@ -6,7 +6,7 @@ const port = 61824;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World from Moibe Node.js\n');
+  res.end('Hello World from Moibe MBESTars Node.js\n');
 });
 
 server.listen(port, hostname, () => {

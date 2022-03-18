@@ -1,18 +1,3 @@
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 61824;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World from Moibe Deploybot Done Correctly! Node.js\n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-
 const axios = require('axios');
 const testAuthentication = () => {
     const url = `https://api.pinata.cloud/data/testAuthentication`;
